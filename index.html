@@ -1066,10 +1066,11 @@
 
 
 <section id="serverstatus" style="padding: 40px; color: #eee; font-family: Arial, sans-serif; text-align: center;">
-  <div style="max-width: 400px; margin: auto; padding: 30px; border-radius: 12px; box-shadow: 0 0 15px #ff5555aa;">
+  <div style="max-width: 500px; margin: auto; padding: 30px; border-radius: 12px; box-shadow: 0 0 15px #ff5555aa;">
     <h2 style="color: #ff5555; font-size: 1.8rem; margin-bottom: 10px;">Nova Nexus Serverstatus</h2>
     <div id="status" style="font-size: 2rem; font-weight: bold; margin: 20px 0;">Lade...</div>
     <div id="players" style="font-size: 1.2rem;"></div>
+    <div id="skins" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px;"></div>
     <div id="info" style="font-size: 1rem; color: #ffb74d; margin-top: 10px;"></div>
     <button onclick="checkServer()" style="margin-top: 20px; background: #ff5555; border: none; color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">Aktualisieren</button>
   </div>
@@ -1078,10 +1079,12 @@
     async function checkServer() {
       const statusEl = document.getElementById('status');
       const playersEl = document.getElementById('players');
+      const skinsEl = document.getElementById('skins');
       const infoEl = document.getElementById('info');
 
       statusEl.textContent = 'Lade...';
       playersEl.textContent = '';
+      skinsEl.innerHTML = '';
       infoEl.textContent = '';
 
       try {
@@ -1093,11 +1096,21 @@
           statusEl.style.color = '#4caf50';
           playersEl.textContent = `Spieler: ${data.players.online} / ${data.players.max}`;
 
-          // Beispiel: Neustart-Hinweis (manuell anpassbar oder später automatisierbar)
+          if (data.players.list) {
+            data.players.list.forEach(player => {
+              const img = document.createElement('img');
+              img.src = `https://minotar.net/avatar/${player}/50`;
+              img.alt = player;
+              img.title = player;
+              img.style.borderRadius = '8px';
+              img.style.border = '2px solid #fff';
+              skinsEl.appendChild(img);
+            });
+          }
+
           if (data.motd.clean.includes("restart")) {
             infoEl.textContent = '🔄 Der Server wird bald neu gestartet!';
           }
-
         } else {
           statusEl.textContent = '🔴 OFFLINE';
           statusEl.style.color = '#f44336';
@@ -1116,7 +1129,6 @@
     setInterval(checkServer, 30000);
   </script>
 </section>
-
 
     <!-- Features Section -->
     <section class="features" id="features">
