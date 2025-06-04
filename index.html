@@ -970,6 +970,100 @@
       </div>
     </section>
 
+<style>
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 80, 80, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 80, 80, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 80, 80, 0); }
+  }
+
+  .announcement {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 14px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 700px;
+    margin: 2rem auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    animation: pulse 2.5s infinite;
+    border: 2px solid #ff4e4e;
+  }
+
+  .announcement h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #ff4e4e;
+  }
+
+  .announcement p {
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+
+  .countdown {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgba(255, 78, 78, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    display: inline-block;
+    color: #fff;
+  }
+
+  .announcement a {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #5865F2;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .announcement a:hover {
+    background-color: #4752c4;
+    transform: scale(1.05);
+  }
+</style>
+
+<section class="announcement">
+  <h2>⚠️ Der Nova Nexus Server schließt bald!</h2>
+  <div id="countdown" class="countdown">⏳ Lädt...</div>
+  <p>Mehr Infos findest du auf unserem Discord-Server.</p>
+  <a href="https://discord.gg/wCUXTxBKK3" target="_blank">🔗 Discord beitreten</a>
+
+  <script>
+    const countdown = document.getElementById("countdown");
+    const target = new Date("2025-06-07T20:00:00+02:00").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const dist = target - now;
+
+      if (dist <= 0) {
+        countdown.innerHTML = "❌ Der Server ist jetzt geschlossen Danke für eure tolle zeit :D.";
+        return;
+      }
+
+      const days = Math.floor(dist / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((dist % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days} Tage ${hours} Std ${minutes} Min ${seconds} Sek`;
+    };
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</section>
+
+
 
 <section id="serverstatus" style="padding: 40px; color: #eee; font-family: Arial, sans-serif; text-align: center;">
   <div style="max-width: 400px; margin: auto; padding: 30px; border-radius: 12px; box-shadow: 0 0 15px #ff5555aa;">
@@ -1345,7 +1439,7 @@
 <section style="background:#121212; color:#fff; padding:2rem 1rem; font-family:sans-serif; text-align:center; max-width:400px; margin:2rem auto; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.7);">
   <div style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap;">
     <div>
-      <div style="font-size:2.5rem; font-weight:bold; color:#4caf50;">114</div>
+      <div style="font-size:2.5rem; font-weight:bold; color:#4caf50;">113</div>
       <div style="font-size:1rem; color:#aaa;">Spieler</div>
     </div>
     <div>
