@@ -623,75 +623,219 @@ fetch("https://api.mcsrvstat.us/2/novanexus.playit.gg")
         </div>
     </section>
 
-<section class="section" id="faq">
+  <section class="event-countdown-section">
+  <div class="event-container">
+    <h2 class="event-title">🎉 Nächstes Event: Sommerturnier</h2>
+    <p class="event-description">Sei dabei am <strong>15. Juli 2025 um 18:00 Uhr</strong> – epische Belohnungen & PvP-Challenges!</p>
+
+    <div class="countdown-box">
+      <div><span id="days">00</span><small>Tage</small></div>
+      <div><span id="hours">00</span><small>Stunden</small></div>
+      <div><span id="minutes">00</span><small>Minuten</small></div>
+      <div><span id="seconds">00</span><small>Sekunden</small></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.event-countdown-section {
+  background: linear-gradient(135deg, #0a0a0a, #1a001f);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.event-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.event-title {
+  font-size: 2.5em;
+  color: #ff00cc;
+  margin-bottom: 10px;
+}
+
+.event-description {
+  font-size: 1.2em;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 2em;
+}
+
+.countdown-box div {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 0, 200, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 200, 0.1);
+  min-width: 80px;
+}
+
+.countdown-box span {
+  display: block;
+  font-weight: bold;
+  color: #fff;
+}
+
+.countdown-box small {
+  font-size: 0.6em;
+  color: #aaa;
+}
+</style>
+
+<script>
+// Zielzeit einstellen (z. B. 15. Juli 2025, 18:00 Uhr)
+const eventDate = new Date("2025-08-08T20:00:00").getTime();
+
+const countdown = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  document.getElementById("days").textContent = String(days).padStart(2, '0');
+  document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.querySelector(".countdown-box").innerHTML = "<strong>🕹️ Das Event läuft jetzt!</strong>";
+  }
+}, 1000);
+</script>
+
+<section class="section" id="gallery">
     <div class="container">
         <div class="section-header fade-in">
-            <h2 class="section-title">Häufig gestellte Fragen</h2>
+            <h2 class="section-title">Server Gallery</h2>
             <p class="section-subtitle">
-                Hier findest du Antworten auf die häufigsten Fragen rund um Nova Nexus.
+                Schauen Sie sich einige der erstaunlichen Bauwerke und Bereiche an, die unsere Community erstellt hat.
             </p>
         </div>
 
-        <div class="faq-list">
-            <div class="faq-item fade-in">
-                <button class="faq-question">🧭 Wie kann ich dem Server beitreten?</button>
-                <div class="faq-answer">
-                    <p>Starte Minecraft (Java Edition), gehe zu „Mehrspieler“ und gib die IP-Adresse <strong>play.novanexus.net</strong> ein. Dann einfach verbinden!</p>
+        <div class="screenshot-grid">
+            <div class="screenshot-card fade-in">
+                <div class="screenshot-image">
+                    <img src="images/spawn.jpg" alt="Spawn Platz">
                 </div>
+                <div class="screenshot-title">Spawn Platz</div>
             </div>
 
-            <div class="faq-item fade-in">
-                <button class="faq-question">🎁 Gibt es tägliche Belohnungen?</button>
-                <div class="faq-answer">
-                    <p>Ja! Du kannst dich täglich einloggen und deine Belohnung mit <code>/daily</code> abholen. Je öfter du hintereinander einloggst, desto besser wird die Belohnung!</p>
+            <div class="screenshot-card fade-in">
+                <div class="screenshot-image">
+                    <img src="images/shop.jpg" alt="Einkaufsviertel">
                 </div>
+                <div class="screenshot-title">Einkaufsviertel</div>
             </div>
 
-            <div class="faq-item fade-in">
-                <button class="faq-question">💬 Gibt es einen Discord Server?</button>
-                <div class="faq-answer">
-                    <p>Natürlich! Tritt unserer Community auf Discord bei: <a href="https://discord.gg/wCUXTxBKK3" target="_blank">discord.gg/deinlink</a></p>
+            <div class="screenshot-card fade-in">
+                <div class="screenshot-image">
+                    <img src="images/survival.jpg" alt="Survival Welten">
                 </div>
+                <div class="screenshot-title">Survival Welten</div>
             </div>
 
-            <div class="faq-item fade-in">
-                <button class="faq-question">⚔️ Welche Spielmodi gibt es?</button>
-                <div class="faq-answer">
-                    <p>Wir bieten Survival, Citybuild, Farmwelten und vieles mehr! Alles kombiniert mit individuellen Features.</p>
+            <div class="screenshot-card fade-in">
+                <div class="screenshot-image">
+                    <img src="images/builds.jpg" alt="Spieler Builds">
                 </div>
+                <div class="screenshot-title">Spieler Builds</div>
             </div>
         </div>
+
     </div>
 </section>
 
+<div class="faq-grid">
+  <div class="faq-box">
+    <button class="faq-question">🧭 Wie kann ich dem Server beitreten?</button>
+    <div class="faq-answer">
+      <p>Starte Minecraft (Java Edition), gehe zu „Mehrspieler“ und gib die IP-Adresse <strong>play.novanexus.net</strong> ein. Dann einfach verbinden!</p>
+    </div>
+  </div>
 
+  <div class="faq-box">
+    <button class="faq-question">🎁 Gibt es tägliche Belohnungen?</button>
+    <div class="faq-answer">
+      <p>Ja! Du kannst dich täglich einloggen und deine Belohnung mit <code>/daily</code> abholen. Je öfter du hintereinander einloggst, desto besser wird die Belohnung!</p>
+    </div>
+  </div>
 
-    <footer id="community">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Nova Nexus</h3>
-                    <p>Das ultimative Minecraft-Überlebenserlebnis mit benutzerdefinierten Funktionen, aktiver Community und regelmäßigen Events.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Community</h3>
-                    <p><a href="#">Discord Server</a></p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nova Nexus. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <div class="faq-box">
+    <button class="faq-question">💬 Gibt es einen Discord Server?</button>
+    <div class="faq-answer">
+      <p>Natürlich! Tritt unserer Community auf Discord bei: <a href="https://discord.gg/wCUXTxBKK3" target="_blank">discord.gg/deinlink</a></p>
+    </div>
+  </div>
 
+  <div class="faq-box">
+    <button class="faq-question">⚔️ Welche Spielmodi gibt es?</button>
+    <div class="faq-answer">
+      <p>Wir bieten Survival, Citybuild, Farmwelten und vieles mehr! Alles kombiniert mit individuellen Features.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.faq-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.faq-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 0, 200, 0.15);
+  border-radius: 16px;
+  padding: 25px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 0, 200, 0.08);
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
+}
+
+.faq-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 0, 200, 0.3);
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 10px;
+  transition: 0.2s ease;
+}
+
+.faq-question:hover {
+  color: #ff00cc;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 0.95em;
+}
+</style>
+  
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
