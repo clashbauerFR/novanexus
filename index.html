@@ -890,7 +890,74 @@ const countdown = setInterval(() => {
   font-size: 0.95em;
 }
 </style>
-  
+
+<section class="max-w-5xl mx-auto p-8">
+  <h2 class="text-4xl font-bold text-center mb-10">❓ Nova Nexus – Häufig gestellte Fragen</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- FAQ Box 1 -->
+    <div class="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
+      <button onclick="toggleFAQ(0)" class="w-full text-left p-5 text-xl font-semibold flex justify-between items-center">
+        Wie komme ich auf den Server?
+        <span id="icon-0" class="text-2xl">+</span>
+      </button>
+      <div id="faq-0" class="hidden px-5 pb-5 text-gray-300">
+        Du kannst Nova Nexus mit der IP <strong>play.novanexus.de</strong> betreten. Minecraft Java 1.20+ wird empfohlen.
+      </div>
+    </div>
+
+    <!-- FAQ Box 2 -->
+    <div class="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
+      <button onclick="toggleFAQ(1)" class="w-full text-left p-5 text-xl font-semibold flex justify-between items-center">
+        Gibt es Ränge und wie bekomme ich sie?
+        <span id="icon-1" class="text-2xl">+</span>
+      </button>
+      <div id="faq-1" class="hidden px-5 pb-5 text-gray-300">
+        Ja! Du kannst Ränge durch Spenden, Events oder durch Ingame-Leistungen freischalten.
+      </div>
+    </div>
+
+    <!-- FAQ Box 3 -->
+    <div class="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
+      <button onclick="toggleFAQ(2)" class="w-full text-left p-5 text-xl font-semibold flex justify-between items-center">
+        Wird mein Fortschritt zurückgesetzt?
+        <span id="icon-2" class="text-2xl">+</span>
+      </button>
+      <div id="faq-2" class="hidden px-5 pb-5 text-gray-300">
+        Nur in Farmwelten. Dein Baufortschritt, Items und Homes bleiben dauerhaft erhalten.
+      </div>
+    </div>
+
+    <!-- FAQ Box 4 -->
+    <div class="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
+      <button onclick="toggleFAQ(3)" class="w-full text-left p-5 text-xl font-semibold flex justify-between items-center">
+        Was macht Nova Nexus besonders?
+        <span id="icon-3" class="text-2xl">+</span>
+      </button>
+      <div id="faq-3" class="hidden px-5 pb-5 text-gray-300">
+        Einzigartige Systeme wie das Mobjäger-Ranking, Eventwelt, Schatzjagden und eine liebevoll gestaltete Community.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFAQ(index) {
+      const content = document.getElementById("faq-" + index);
+      const icon = document.getElementById("icon-" + index);
+      const isHidden = content.classList.contains("hidden");
+
+      // Optional: Close all others
+      document.querySelectorAll('[id^="faq-"]').forEach(el => el.classList.add("hidden"));
+      document.querySelectorAll('[id^="icon-"]').forEach(el => el.textContent = "+");
+
+      if (isHidden) {
+        content.classList.remove("hidden");
+        icon.textContent = "−";
+      }
+    }
+  </script>
+</section>
+
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
