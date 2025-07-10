@@ -717,100 +717,101 @@ const countdown = setInterval(() => {
 }, 1000);
 </script>
 
-    <section class="max-w-5xl mx-auto p-8">
-  <h2 class="text-4xl font-bold text-center mb-10">❓ Nova Nexus – Häufig gestellte Fragen</h2>
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="text-4xl font-bold text-center mb-12">❓ Nova Nexus – Häufig gestellte Fragen</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <!-- FAQ Item -->
-    <div class="bg-gray-800 text-white rounded-2xl shadow-lg transition-all duration-300 group overflow-hidden">
-      <button onclick="toggleFAQ(0)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold group-hover:bg-gray-700 transition-colors duration-200">
+    <!-- FAQ Item Template -->
+    <div class="bg-gray-800 text-white rounded-2xl shadow-lg group overflow-hidden transition-all duration-300">
+      <button onclick="toggleFAQ(0)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold hover:bg-gray-700 transition duration-200">
         <span>Wie komme ich auf den Server?</span>
-        <span id="icon-0" class="text-2xl transition-transform duration-300 transform">+</span>
+        <span id="icon-0" class="text-2xl">+</span>
       </button>
       <div id="faq-0" class="hidden px-6 pb-6 text-gray-300">
         Du kannst Nova Nexus mit der IP <strong>play.novanexus.de</strong> betreten. Minecraft Java 1.20+ wird empfohlen.
       </div>
     </div>
 
-    <div class="bg-gray-800 text-white rounded-2xl shadow-lg transition-all duration-300 group overflow-hidden">
-      <button onclick="toggleFAQ(1)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold group-hover:bg-gray-700 transition-colors duration-200">
+    <div class="bg-gray-800 text-white rounded-2xl shadow-lg group overflow-hidden transition-all duration-300">
+      <button onclick="toggleFAQ(1)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold hover:bg-gray-700 transition duration-200">
         <span>Gibt es Ränge und wie bekomme ich sie?</span>
-        <span id="icon-1" class="text-2xl transition-transform duration-300 transform">+</span>
+        <span id="icon-1" class="text-2xl">+</span>
       </button>
       <div id="faq-1" class="hidden px-6 pb-6 text-gray-300">
         Ja! Du kannst Ränge durch Spenden, Events oder durch Ingame-Leistungen freischalten.
       </div>
     </div>
 
-    <div class="bg-gray-800 text-white rounded-2xl shadow-lg transition-all duration-300 group overflow-hidden">
-      <button onclick="toggleFAQ(2)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold group-hover:bg-gray-700 transition-colors duration-200">
+    <div class="bg-gray-800 text-white rounded-2xl shadow-lg group overflow-hidden transition-all duration-300">
+      <button onclick="toggleFAQ(2)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold hover:bg-gray-700 transition duration-200">
         <span>Wird mein Fortschritt zurückgesetzt?</span>
-        <span id="icon-2" class="text-2xl transition-transform duration-300 transform">+</span>
+        <span id="icon-2" class="text-2xl">+</span>
       </button>
       <div id="faq-2" class="hidden px-6 pb-6 text-gray-300">
         Nur in Farmwelten. Dein Baufortschritt, Items und Homes bleiben dauerhaft erhalten.
       </div>
     </div>
 
-    <div class="bg-gray-800 text-white rounded-2xl shadow-lg transition-all duration-300 group overflow-hidden">
-      <button onclick="toggleFAQ(3)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold group-hover:bg-gray-700 transition-colors duration-200">
+    <div class="bg-gray-800 text-white rounded-2xl shadow-lg group overflow-hidden transition-all duration-300">
+      <button onclick="toggleFAQ(3)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold hover:bg-gray-700 transition duration-200">
         <span>Was macht Nova Nexus besonders?</span>
-        <span id="icon-3" class="text-2xl transition-transform duration-300 transform">+</span>
+        <span id="icon-3" class="text-2xl">+</span>
       </button>
       <div id="faq-3" class="hidden px-6 pb-6 text-gray-300">
         Einzigartige Systeme wie das Mobjäger-Ranking, Eventwelt, Schatzjagden und eine liebevoll gestaltete Community.
       </div>
     </div>
   </div>
-
-  <script>
-    function toggleFAQ(index) {
-      const content = document.getElementById("faq-" + index);
-      const icon = document.getElementById("icon-" + index);
-      const isHidden = content.classList.contains("hidden");
-
-      // Collapse all
-      document.querySelectorAll('[id^="faq-"]').forEach(el => el.classList.add("hidden"));
-      document.querySelectorAll('[id^="icon-"]').forEach(el => el.textContent = "+");
-
-      // Expand selected
-      if (isHidden) {
-        content.classList.remove("hidden");
-        icon.textContent = "−";
-      }
-    }
-  </script>
 </section>
 
-    <section class="max-w-6xl mx-auto px-8 py-16">
+<section class="max-w-6xl mx-auto px-6 py-16">
   <h2 class="text-4xl font-bold text-center mb-12">📊 Nova Nexus – Serverstatistiken</h2>
 
   <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
     <!-- Spieleranzahl -->
-    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform duration-300">
+    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
       <div class="text-5xl font-bold text-green-400">131</div>
       <div class="text-lg mt-2 text-gray-300">Aktive Spieler</div>
     </div>
 
     <!-- Uptime -->
-    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform duration-300">
+    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
       <div class="text-5xl font-bold text-blue-400">27/7</div>
       <div class="text-lg mt-2 text-gray-300">Server Uptime</div>
     </div>
 
     <!-- Support -->
-    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform duration-300">
+    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
       <div class="text-5xl font-bold text-purple-400">24/7</div>
       <div class="text-lg mt-2 text-gray-300">Support verfügbar</div>
     </div>
 
-    <!-- Weitere Info -->
-    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform duration-300">
+    <!-- Zufriedenheit -->
+    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
       <div class="text-5xl font-bold text-yellow-400">99.9%</div>
       <div class="text-lg mt-2 text-gray-300">Zufriedenheit</div>
     </div>
   </div>
 </section>
+
+<script>
+  function toggleFAQ(index) {
+    const content = document.getElementById("faq-" + index);
+    const icon = document.getElementById("icon-" + index);
+    const isHidden = content.classList.contains("hidden");
+
+    // Collapse all
+    document.querySelectorAll('[id^="faq-"]').forEach(el => el.classList.add("hidden"));
+    document.querySelectorAll('[id^="icon-"]').forEach(el => el.textContent = "+");
+
+    // Expand selected
+    if (isHidden) {
+      content.classList.remove("hidden");
+      icon.textContent = "−";
+    }
+  }
+</script>
+
 
 <section class="section" id="gallery">
     <div class="container">
