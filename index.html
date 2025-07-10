@@ -7,7 +7,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+
+    
         * {
             margin: 0;
             padding: 0;
@@ -525,7 +526,7 @@
     <div class="server-stats">
         <div class="stat-card">
             <div class="stat-label">Server IP</div>
-            <div class="stat-value" id="server-ip">novanexus.playit.gg</div>
+            <div class="stat-value" id="server-ip">play.nova-nexus.net</div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Version</div>
@@ -546,7 +547,7 @@
 
 <script>
 function copyServerIP() {
-    const ip = "novanexus.playit.gg";
+    const ip = "play.nova-nexus.net";
     navigator.clipboard.writeText(ip).then(() => {
         alert("📋 Server-IP kopiert: " + ip);
     }).catch(err => {
@@ -564,7 +565,7 @@ function copyServerIP() {
 </section>
 
 <script>
-fetch("https://api.mcsrvstat.us/2/novanexus.playit.gg")
+fetch("https://api.mcsrvstat.us/2/play.nova-nexus.net")
     .then(response => response.json())
     .then(data => {
         if (data && data.online) {
@@ -911,7 +912,7 @@ const countdown = setInterval(() => {
 
         // Copy IP address functionality
         document.getElementById('server-ip').addEventListener('click', function() {
-            navigator.clipboard.writeText('novanexus.playit.gg').then(() => {
+            navigator.clipboard.writeText('play.nova-nexus.net').then(() => {
                 const element = this;
                 const originalText = element.textContent;
                 element.textContent = 'Copied!';
