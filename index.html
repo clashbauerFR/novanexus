@@ -624,65 +624,10 @@ fetch("https://api.mcsrvstat.us/2/play.nova-nexus.net")
         </div>
     </section>
 
-  
-  <section class="rank-section">
-  <div class="rank-container">
-    <h2 class="rank-title">🌟 Premium Rang</h2>
-    <p class="rank-description">Exklusive Rechte für unsere Unterstützer:</p>
-    
-    <ul class="rank-perks">
-      <li>✨ <code>/healme</code> – Heile dich jederzeit</li>
-      <li>🧊 <code>/ec</code> oder <code>/enderchest</code> – Zugriff von überall</li>
-      <li>🛠️ <code>/workbench</code> – Öffne eine Werkbank</li>
-      <li>🔙 <code>/back</code> – Kehre zum letzten Ort zurück</li>
-      <li>🚀 ...und vieles mehr bald!</li>
-    </ul>
-  </div>
-</section>
-
-<style>
-.rank-section {
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #0f001a, #1c0029);
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-}
-.rank-title {
-  font-size: 2.5rem;
-  color: #ff00cc;
-  margin-bottom: 10px;
-}
-.rank-description {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin-bottom: 30px;
-}
-.rank-perks {
-  list-style: none;
-  padding: 0;
-  max-width: 500px;
-  margin: auto;
-  text-align: left;
-  animation: fadeInUp 1s ease-in-out;
-}
-.rank-perks li {
-  margin: 10px 0;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 12px 20px;
-  border-radius: 10px;
-  border-left: 3px solid #ff00cc;
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
   <section class="event-countdown-section">
   <div class="event-container">
     <h2 class="event-title">🎉 Nächstes Event: Sommerturnier</h2>
-    <p class="event-description">Beginn am <strong>8. August 2025 um 20:00 Uhr</strong> – Bereite dich auf den Kampf vor!</p>
+    <p class="event-description">Beginn am <strong>10. August 2025 um 20:00 Uhr</strong> – Bereite dich auf den Kampf vor!</p>
 
     <div class="countdown-box">
       <div><span id="days">00</span><small>Tage</small></div>
@@ -749,7 +694,7 @@ fetch("https://api.mcsrvstat.us/2/play.nova-nexus.net")
 
 <script>
 // Zielzeit einstellen (z. B. 15. Juli 2025, 18:00 Uhr)
-const eventDate = new Date("2025-08-08T20:00:00").getTime();
+const eventDate = new Date("2025-10-08T20:00:00").getTime();
 
 const countdown = setInterval(() => {
   const now = new Date().getTime();
@@ -818,46 +763,43 @@ const countdown = setInterval(() => {
   <h2 class="text-4xl font-bold text-center mb-10">❓ Nova Nexus – Häufig gestellte Fragen</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <!-- FAQ Box 1 -->
-    <div class="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
-      <button onclick="toggleFAQ(0)" class="w-full text-left p-5 text-xl font-semibold flex justify-between items-center">
-        Wie komme ich auf den Server?
-        <span id="icon-0" class="text-2xl">+</span>
+    <!-- FAQ Item -->
+    <div class="bg-gray-800 text-white rounded-2xl shadow-lg transition-all duration-300 group overflow-hidden">
+      <button onclick="toggleFAQ(0)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold group-hover:bg-gray-700 transition-colors duration-200">
+        <span>Wie komme ich auf den Server?</span>
+        <span id="icon-0" class="text-2xl transition-transform duration-300 transform">+</span>
       </button>
-      <div id="faq-0" class="hidden px-5 pb-5 text-gray-300">
+      <div id="faq-0" class="hidden px-6 pb-6 text-gray-300">
         Du kannst Nova Nexus mit der IP <strong>play.novanexus.de</strong> betreten. Minecraft Java 1.20+ wird empfohlen.
       </div>
     </div>
 
-    <!-- FAQ Box 2 -->
-    <div class="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
-      <button onclick="toggleFAQ(1)" class="w-full text-left p-5 text-xl font-semibold flex justify-between items-center">
-        Gibt es Ränge und wie bekomme ich sie?
-        <span id="icon-1" class="text-2xl">+</span>
+    <div class="bg-gray-800 text-white rounded-2xl shadow-lg transition-all duration-300 group overflow-hidden">
+      <button onclick="toggleFAQ(1)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold group-hover:bg-gray-700 transition-colors duration-200">
+        <span>Gibt es Ränge und wie bekomme ich sie?</span>
+        <span id="icon-1" class="text-2xl transition-transform duration-300 transform">+</span>
       </button>
-      <div id="faq-1" class="hidden px-5 pb-5 text-gray-300">
+      <div id="faq-1" class="hidden px-6 pb-6 text-gray-300">
         Ja! Du kannst Ränge durch Spenden, Events oder durch Ingame-Leistungen freischalten.
       </div>
     </div>
 
-    <!-- FAQ Box 3 -->
-    <div class="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
-      <button onclick="toggleFAQ(2)" class="w-full text-left p-5 text-xl font-semibold flex justify-between items-center">
-        Wird mein Fortschritt zurückgesetzt?
-        <span id="icon-2" class="text-2xl">+</span>
+    <div class="bg-gray-800 text-white rounded-2xl shadow-lg transition-all duration-300 group overflow-hidden">
+      <button onclick="toggleFAQ(2)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold group-hover:bg-gray-700 transition-colors duration-200">
+        <span>Wird mein Fortschritt zurückgesetzt?</span>
+        <span id="icon-2" class="text-2xl transition-transform duration-300 transform">+</span>
       </button>
-      <div id="faq-2" class="hidden px-5 pb-5 text-gray-300">
+      <div id="faq-2" class="hidden px-6 pb-6 text-gray-300">
         Nur in Farmwelten. Dein Baufortschritt, Items und Homes bleiben dauerhaft erhalten.
       </div>
     </div>
 
-    <!-- FAQ Box 4 -->
-    <div class="bg-gray-900 text-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
-      <button onclick="toggleFAQ(3)" class="w-full text-left p-5 text-xl font-semibold flex justify-between items-center">
-        Was macht Nova Nexus besonders?
-        <span id="icon-3" class="text-2xl">+</span>
+    <div class="bg-gray-800 text-white rounded-2xl shadow-lg transition-all duration-300 group overflow-hidden">
+      <button onclick="toggleFAQ(3)" class="w-full flex justify-between items-center p-6 text-left text-xl font-semibold group-hover:bg-gray-700 transition-colors duration-200">
+        <span>Was macht Nova Nexus besonders?</span>
+        <span id="icon-3" class="text-2xl transition-transform duration-300 transform">+</span>
       </button>
-      <div id="faq-3" class="hidden px-5 pb-5 text-gray-300">
+      <div id="faq-3" class="hidden px-6 pb-6 text-gray-300">
         Einzigartige Systeme wie das Mobjäger-Ranking, Eventwelt, Schatzjagden und eine liebevoll gestaltete Community.
       </div>
     </div>
@@ -869,10 +811,11 @@ const countdown = setInterval(() => {
       const icon = document.getElementById("icon-" + index);
       const isHidden = content.classList.contains("hidden");
 
-      // Optional: Close all others
+      // Collapse all
       document.querySelectorAll('[id^="faq-"]').forEach(el => el.classList.add("hidden"));
       document.querySelectorAll('[id^="icon-"]').forEach(el => el.textContent = "+");
 
+      // Expand selected
       if (isHidden) {
         content.classList.remove("hidden");
         icon.textContent = "−";
@@ -880,6 +823,37 @@ const countdown = setInterval(() => {
     }
   </script>
 </section>
+
+    <section class="max-w-6xl mx-auto px-8 py-16">
+  <h2 class="text-4xl font-bold text-center mb-12">📊 Nova Nexus – Serverstatistiken</h2>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
+    <!-- Spieleranzahl -->
+    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform duration-300">
+      <div class="text-5xl font-bold text-green-400">131</div>
+      <div class="text-lg mt-2 text-gray-300">Aktive Spieler</div>
+    </div>
+
+    <!-- Uptime -->
+    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform duration-300">
+      <div class="text-5xl font-bold text-blue-400">27/7</div>
+      <div class="text-lg mt-2 text-gray-300">Server Uptime</div>
+    </div>
+
+    <!-- Support -->
+    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform duration-300">
+      <div class="text-5xl font-bold text-purple-400">24/7</div>
+      <div class="text-lg mt-2 text-gray-300">Support verfügbar</div>
+    </div>
+
+    <!-- Weitere Info -->
+    <div class="bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform duration-300">
+      <div class="text-5xl font-bold text-yellow-400">99.9%</div>
+      <div class="text-lg mt-2 text-gray-300">Zufriedenheit</div>
+    </div>
+  </div>
+</section>
+
 
     <script>
         // Navbar scroll effect
