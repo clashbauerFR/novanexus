@@ -601,7 +601,7 @@ fetch("https://api.mcsrvstat.us/2/play.nova-nexus.net")
                     <div class="feature-icon">
                         <i class="fas fa-coins"></i>
                     </div>
-                    <h3 class="feature-title">🔒 KOMMT BALD!</h3>
+                    <h3 class="feature-title">Wirtschaft</h3>
                     <p class="feature-description">Spielergesteuerte Wirtschaft mit Geschäften, Auktionen und Handel. Verdiene Geld durch verschiedene Aktivitäten und baue dein Vermögen auf.</p>
                 </div>
                 
@@ -624,7 +624,7 @@ fetch("https://api.mcsrvstat.us/2/play.nova-nexus.net")
         </div>
     </section>
 
-  <section class="event-countdown-section">
+ <section class="event-countdown-section">
   <div class="event-container">
     <h2 class="event-title">🎉 Nächstes Event: Sommerturnier</h2>
     <p class="event-description">Beginn am <strong>10. August 2025 um 20:00 Uhr</strong> – Bereite dich auf den Kampf vor!</p>
@@ -717,6 +717,104 @@ const countdown = setInterval(() => {
 }, 1000);
 </script>
 
+
+<section class="section" id="socials">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">🌐 Socials & Kontakt</h2>
+      <p class="section-subtitle">Bleib mit Nova Nexus verbunden – folge uns auf Social Media oder kontaktiere uns direkt.</p>
+    </div>
+
+    <div class="features-grid">
+      <!-- TikTok -->
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <i class="fab fa-tiktok"></i>
+        </div>
+        <h3 class="feature-title">TikTok</h3>
+        <p class="feature-description">
+          Folge uns auf TikTok für Clips, Highlights & Updates.
+          <br><a href="https://www.tiktok.com/@novanexus173" target="_blank" class="text-indigo-400 underline">tiktok.com/@novanexus173</a>
+        </p>
+      </div>
+
+      <!-- YouTube -->
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <i class="fab fa-youtube"></i>
+        </div>
+        <h3 class="feature-title">YouTube</h3>
+        <p class="feature-description">
+          Verpasse keine Videos, Trailer & Devlogs.
+          <br><a href="https://youtube.com/@novanexus117?si=3TxJOD9Sg-FjlELH" target="_blank" class="text-red-400 underline">youtube.com/@novanexus117</a>
+        </p>
+      </div>
+
+      <!-- E-Mail -->
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3 class="feature-title">E-Mail</h3>
+        <p class="feature-description">
+          Schreib uns für Feedback oder Support direkt per Mail.
+          <br><a href="mailto:novanexus62@gmail.com" class="text-green-400 underline">novanexus62@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">❓ Häufige Fragen (FAQ)</h2>
+      <p class="section-subtitle">Alles Wichtige rund um Nova Nexus auf einen Blick.</p>
+    </div>
+
+    <div class="features-grid">
+      
+      <!-- Gamemodes -->
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <i class="fas fa-map"></i>
+        </div>
+        <h3 class="feature-title">Welche Spielmodi gibt es?</h3>
+        <p class="feature-description">
+          Derzeit verfügbar: <strong>Survival</strong> & <strong>PvP-Arena</strong>. In Entwicklung: <strong>Citybuild</strong>, <strong>SkyPvP</strong> & Dungeons!
+        </p>
+      </div>
+
+      <!-- Server IP -->
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <i class="fas fa-server"></i>
+        </div>
+        <h3 class="feature-title">Wie lautet die Server-IP?</h3>
+        <p class="feature-description">
+          Du erreichst Nova Nexus über <strong>play.nova-nexus.net</strong><br>Version: <strong>1.21.4</strong>
+        </p>
+      </div>
+
+      <!-- Discord -->
+      <div class="feature-card fade-in">
+        <div class="feature-icon">
+          <i class="fab fa-discord"></i>
+        </div>
+        <h3 class="feature-title">Habt ihr einen Discord?</h3>
+        <p class="feature-description">
+          Ja! Tritt unserer Community bei auf<br>
+          <a href="https://discord.gg/wCUXTxBKK3" target="_blank" class="text-indigo-400 underline">discord.gg/wCUXTxBKK3</a> für Support, Events & News.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
 <section class="section" id="gallery">
     <div class="container">
         <div class="section-header fade-in">
@@ -804,14 +902,6 @@ const countdown = setInterval(() => {
             });
         });
 
-        // Dynamic player count
-        function updatePlayerCount() {
-            const playerCountElement = document.getElementById('player-count');
-            const count = Math.floor(Math.random() * 25) + 35;
-            playerCountElement.textContent = `${count}/100`;
-        }
-
-        setInterval(updatePlayerCount, 15000);
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
